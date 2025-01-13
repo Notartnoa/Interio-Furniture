@@ -1,0 +1,75 @@
+<?php
+
+namespace App\Http\Controllers;
+
+use App\Mail\WelcomeEmail;
+use App\Models\User;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Mail;
+
+class UserController extends Controller
+{
+    public function register(Request $request)
+    {
+        // Validasi input
+        $request->validate([
+            'fname' => 'required',
+            'lname' => 'required',
+            'email' => 'required|email|unique:users,email',
+            'password' => 'required|min:8',
+        ]);
+
+        // Membuat user baru
+        $user = User::create([
+            'name' => $request->fname,
+            'lname' => $request->lname,
+            'email' => $request->email,
+            'type' => 'client',
+            'password' => Hash::make($request->password),
+        ]);
+
+        // Kirim email sambutan setelah user dibuat
+        Mail::to($user->email)->send(new WelcomeEmail($user));
+
+        // Redirect ke halaman login dengan pesan sukses
+        return redirect()->route('login.n')->withToastSuccess('Account created successfully!');
+    }
+
+    public function login(Request $request)
+    {
+        // Validasi data login
+        $validatedData = $request->validate([
+            'email' => 'required|email',
+            'password' => 'required|min:8',
+        ]);
+
+        // Proses login
+        if (Auth::attempt($validatedData)) {
+            $user = Auth::user();
+
+            // Cek tipe user untuk pengalihan halaman
+            if ($user->type === 'admin') {
+                return redirect()->route('admin.dashboard')->with('user', $user)->withToastSuccess('Welcome back ' . $user->name . '!');
+            } else {
+                return redirect()->route('welcome')->with('user', $user)->withToastSuccess('Welcome back Dear ' . $user->name . '!');
+            }
+        } else {
+            return redirect()->route('login.n')->with('toast_error', 'Invalid credentials')->withInput();
+        }
+    }
+
+    public function logout(Request $request)
+    {
+        // Logout dan hapus sesi pengguna
+        Auth::logout();
+
+        // Hapus sesi dan regenerasi token
+        $request->session()->invalidate();
+        $request->session()->regenerateToken();
+
+        // Redirect ke halaman utama
+        return redirect('/');
+    }
+}
