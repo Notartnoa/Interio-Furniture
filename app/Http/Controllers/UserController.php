@@ -29,7 +29,7 @@ class UserController extends Controller
             'password' => Hash::make($request->password),
         ]);
         $user->save();
-        //Mail::to($user->email)->send(new WelcomeEmail($user));
+        Mail::to($user->email)->send(new WelcomeEmail($user));
 
         return redirect()->route('login.n')->withToastSuccess('Account created successfully!');
     }

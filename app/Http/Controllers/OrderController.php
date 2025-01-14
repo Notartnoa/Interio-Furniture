@@ -7,6 +7,7 @@ use App\Models\Order;
 use App\Models\OrderProduct;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Barryvdh\DomPDF\Facade\Pdf; 
 
 class OrderController extends Controller
 {
@@ -53,5 +54,22 @@ class OrderController extends Controller
     {
         $orders = Order::all();
         return view('Layouts.Admin.orders', ['orders' => $orders]);
+    }
+
+    public function exportToPdf()
+    {
+        // Ambil data orders
+        $orders = Order::with(['user', 'orderProducts'])->get();
+
+        // Hitung total untuk setiap order
+        $orders->each(function ($order) {
+            $order->total = $order->orderProducts->sum('total');
+        });
+
+        // Render PDF
+        $pdf = Pdf::loadView('orders.pdf', compact('orders'));
+
+        // Unduh file PDF
+        return $pdf->download('orders.pdf');
     }
 }

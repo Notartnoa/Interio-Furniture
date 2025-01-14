@@ -2,7 +2,7 @@
 <html>
 
 <head>
-    <title>Welcome to MegaShop</title>
+    <title>Welcome to Interio.</title>
 </head>
 
 <body>
