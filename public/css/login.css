@@ -1,0 +1,164 @@
+body {
+    margin: 0;
+    font-family: "Nunito", sans-serif;
+    overflow-x: hidden;
+}
+
+.login-container {
+    display: flex;
+    min-height: 100vh;
+    width: 100vw;
+}
+
+.left-section {
+    width: 60%;
+    background-image: url("https://img.freepik.com/free-photo/high-angle-beautiful-plants-home_23-2149383634.jpg?t=st=1736769476~exp=1736773076~hmac=71a5d8d81a9cfc66a819c929377540da66a687950b9a2a4779836f31ed8a3b25&w=1380");
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    padding: 40px;
+    color: white;
+}
+
+.left-section::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(to bottom,
+            rgba(0, 0, 0, 0.4),
+            rgba(0, 0, 0, 0.6));
+}
+
+.left-content {
+    position: relative;
+    z-index: 1;
+    max-width: 500px;
+    margin-top: 100px;
+}
+
+.left-title {
+    font-size: 48px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.left-text {
+    font-size: 18px;
+    color: #f8f9fa;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.right-section {
+    width: 40%;
+    background-color: #ffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.login-form {
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+}
+
+.login-title {
+    color: #2d3239;
+    font-size: 32px;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.login-subtitle {
+    color: #9ca3af;
+    margin-bottom: 40px;
+}
+
+.form-group {
+    margin-bottom: 25px;
+    position: relative;
+}
+
+.form-control {
+    width: 100%;
+    padding: 10px 0;
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid #4b5563;
+    color: white;
+    outline: none;
+    transition: border-color 0.3s;
+}
+
+.form-control:focus {
+    border-color: #f59d23;
+    box-shadow: none;
+    background: transparent;
+}
+
+.form-control:-webkit-autofill,
+.form-control:-webkit-autofill:hover,
+.form-control:-webkit-autofill:focus {
+    -webkit-text-fill-color: #2d3239;
+    -webkit-box-shadow: 0 0 0px 1000px white inset;
+    transition: background-color 5000s ease-in-out 0s;
+}
+
+.form-label {
+    position: absolute;
+    left: 0;
+    top: 10px;
+    color: #9ca3af;
+    transition: 0.3s;
+    pointer-events: none;
+    font-size: 14px;
+}
+
+.form-control:focus~.form-label,
+.form-control:not(:placeholder-shown)~.form-label {
+    top: -10px;
+    font-size: 12px;
+    color: #ffa832;
+}
+
+.login-btn {
+    width: 100%;
+    padding: 12px;
+    background-color: #ffa832;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-weight: 500;
+    margin-top: 20px;
+    transition: transform 0.3s, background-color 0.3s;
+}
+
+.login-btn:hover {
+    background-color: #f59d23;
+    transform: scale(1.02);
+    cursor: pointer;
+}
+
+.signup-text {
+    margin-top: 40px;
+    color: #9ca3af;
+    font-size: 14px;
+}
+
+.signup-link {
+    color: #ffa832;
+    text-decoration: none;
+    transition: color 0.3s;
+    display: inline-block;
+    margin-top: 5px;
+}
+
+.signup-link:hover {
+    color: #f59d23;
+    text-decoration: underline;
+}
