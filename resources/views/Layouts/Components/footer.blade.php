@@ -23,7 +23,7 @@
                     <h3>Categories</h3>
                 </div>
                 <ul class="f-links">
-                    <li><i class="fa-solid fa-chevron-right"></i><a href="#">Living Room</a></li>
+                    <li><i class="fa-solid fa-chevron-right"></i><a href="contoh">Living Room</a></li>
                     <li><i class="fa-solid fa-chevron-right"></i><a href="#">Dining Room</a></li>
                     <li><i class="fa-solid fa-chevron-right"></i><a href="#">Bedroom</a></li>
                     <li><i class="fa-solid fa-chevron-right"></i><a href="#">Office</a></li>

@@ -5,6 +5,7 @@ use App\Http\Controllers\CartController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\OrderController;
+use App\Http\Controllers\PaymentController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\UserController;
 use App\Models\Category;
@@ -30,9 +31,11 @@ Route::get(
     [ProductController::class, 'index']
 );
 
+
 Route::get('/about', [AboutController::class, 'index']);
 
 Route::get('/contact', [ContactController::class, 'index']);
+
 
 Route::get('/login', function () {
     return view('Auth.login');
@@ -66,6 +69,10 @@ Route::post('/add-category', [CategoryController::class, 'add'])->middleware(['a
 Route::get('/delete-category/{id}', [CategoryController::class, 'destroy'])->middleware(['auth', 'admin'])->name('category.delete');
 Route::get('/edit-category/{id}', [CategoryController::class, 'edit'])->middleware(['auth', 'admin'])->name('category.edit');
 Route::put('/update-category/{id}', [CategoryController::class, 'update'])->middleware(['auth', 'admin'])->name('category.update');
+
+Route::get('/payment', [PaymentController::class, 'showPaymentPage'])->name('payment.page');
+Route::post('/payment/upload', [PaymentController::class, 'uploadProof'])->name('payment.upload');
+
 
 
 Route::get(

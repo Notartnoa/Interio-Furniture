@@ -78,8 +78,7 @@
                         <p class="vat-text">including VAT</p>
                     </div>
                 </div>
-                <form action="{{ route('orders.store') }}" method="post">
-                    @csrf
+                <form action="{{ route('payment.page') }}" method="get">
                     <button class="order-btn">Order now</button>
                 </form>
             </div>
