@@ -76,7 +76,7 @@ body {
     background: transparent;
     border: none;
     border-bottom: 1px solid #4b5563;
-    color: white;
+    color: #2d3239;
     outline: none;
     transition: border-color 0.3s;
 }
