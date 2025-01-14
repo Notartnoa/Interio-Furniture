@@ -96,7 +96,7 @@
             <div class="max-w-screen-md">
                 <h2 class="section-title">Discover Our Range of Elegant and Functional Furniture</h2>
                 <p class="section-description">Each piece of our furniture is thoughtfully designed and crafted to
-                    combine style with practicality. Explore our collection today and find the perfect furniture to
+                    combine style with practicality. Explore our collection today, and find the perfect furniture to
                     elevate your living space.</p>
                 <form class="search-form" id="search-form">
                     <label for="UserEmail" class="search-input-wrapper">
