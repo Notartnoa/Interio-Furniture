@@ -32,7 +32,7 @@ Route::get(
 
 Route::get('/about', [AboutController::class, 'index']);
 
-Route::get('/about', [ContactController::class, 'index']);
+Route::get('/contact', [ContactController::class, 'index']);
 
 Route::get('/login', function () {
     return view('Auth.login');
