@@ -8,8 +8,8 @@
                 <ul class="custom-nav-menu">
                     <li><a href="/" class="custom-nav-link" aria-current="page">Home</a></li>
                     <li><a href="products" class="custom-nav-link">Products</a></li>
-                    <li><a href="#" class="custom-nav-link">About</a></li>
-                    <li><a href="#" class="custom-nav-link">Contact</a></li>
+                    <li><a href="about" class="custom-nav-link">About</a></li>
+                    <li><a href="contact" class="custom-nav-link">Contact</a></li>
                 </ul>
             </div>
             <div class="custom-nav-items">
