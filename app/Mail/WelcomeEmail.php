@@ -31,8 +31,8 @@ class WelcomeEmail extends Mailable
      */
     public function build()
     {
-        return $this->view('emails.welcome')->with(['user' => $this->user])
-            ->subject('Welcome to our site!');
+        return $this->view('emails.welcome')->with(['user'=>$this->user])
+                    ->subject('Welcome to our site!');
     }
     /**
      * Get the message envelope.

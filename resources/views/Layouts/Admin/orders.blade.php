@@ -70,7 +70,8 @@
                                                 class="relative block w-1/2 overflow-hidden border-b border-gray-200 bg-transparent pt-3 focus-within:border-purple-700 dark:border-gray-700">
                                                 <select id="UserEmail" placeholder="Category" name="category"
                                                     class="peer capitalize h-8 w-full border-none bg-transparent p-0 placeholder-transparent focus:border-transparent focus:outline-none focus:ring-0 dark:text-black-400 sm:text-sm">
-                                                    <option value="{{$order->order_status}}">{{ $order->order_status }}</option>
+                                                    <option value="{{ $order->order_status }}">
+                                                        {{ $order->order_status }}</option>
                                                     <option value="Processing">Processing</option>
                                                     <option value="Shipped">Shipped</option>
                                                     <option value="Delivered">Delivered</option>
@@ -95,6 +96,15 @@
                                 @endforeach
                             </tbody>
                         </table>
+                        <div class="flex justify-between">
+                            <h1 class="p-3 text-black-800 dark:text-black text-center text-2xl font-semibold">All orders
+                            </h1>
+                            <a href="{{ route('orders.export.pdf') }}"
+                                class="bg-orange-400 hover:bg-orange-500 text-white font-bold py-2 px-4 rounded">
+                                Export to PDF
+                            </a>
+                        </div>
+
                     </div>
                 </div>
             </div>

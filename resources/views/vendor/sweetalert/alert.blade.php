@@ -1,5 +1,5 @@
 @php
-    use Illuminate\Support\Facades\Session;
+use Illuminate\Support\Facades\Session;
 @endphp
 
 @if (Session::has('alert.config') || Session::has('alert.delete'))

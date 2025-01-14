@@ -73,3 +73,4 @@ Route::put('cart-confirm-quantity/{id}', [CartController::class, 'update'])->mid
 Route::get('/orders', [OrderController::class, 'getOrders'])->middleware(['auth'])->name('order.all');
 Route::get('/all-orders', [OrderController::class, 'getAllOrders'])->middleware(['auth', 'admin']);
 Route::post('/order-add', [OrderController::class, 'placeOrder'])->middleware('auth')->name('orders.store');
+Route::get('/orders/export-pdf', [OrderController::class, 'exportToPdf'])->name('orders.export.pdf');
