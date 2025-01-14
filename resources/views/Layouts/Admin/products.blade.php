@@ -18,7 +18,7 @@
 
 <body>
     <div
-        class="min-h-screen flex flex-col flex-auto flex-shrink-0 antialiased bg-white dark:bg-gray-600 text-black dark:text-white">
+        class="min-h-screen flex flex-col flex-auto flex-shrink-0 antialiased bg-white dark:bg-white-600 text-black dark:text-white">
 
         <!-- Header -->
         @component('Layouts.Components.header')
@@ -35,11 +35,11 @@
                 <div class="w-full overflow-hidden rounded-lg shadow-xs">
                     <div class="w-full overflow-x-auto">
                         <div class="flex justify-between">
-                            <h1 class="p-3 text-gray-800 dark:text-white text-center text-2xl font-semibold">All
+                            <h1 class="p-3 text-orange-400 dark:text-black text-center text-2xl font-semibold">All
                                 products</h1>
                             <div class="flex">
                                 <a href="/add-product"
-                                    class=" text-white bg-purple-700 hover:bg-purple-800 focus:ring-4 focus:ring-purple-300 font-medium rounded-lg text-sm px-4 lg:px-5 py-1 lg:py-2.5 sm:mr-2 lg:mr-0 dark:bg-purple-600 dark:hover:bg-purple-700 focus:outline-none dark:focus:ring-purple-800">add
+                                    class=" text-white bg-orange-400 hover:bg-orange-400 focus:ring-4 focus:ring-orange-400 font-medium rounded-lg text-sm px-4 lg:px-5 py-1 lg:py-2.5 sm:mr-2 lg:mr-0 dark:bg-orange-400 dark:hover:bg-orange-900 focus:outline-none dark:focus:ring-orange-400">add
                                     a new product</a>
                             </div>
                         </div>
@@ -47,17 +47,17 @@
                         <table class="w-full">
                             <thead>
                                 <tr
-                                    class="text-xs font-semibold tracking-wide text-left text-gray-500 uppercase border-b dark:border-gray-700 bg-gray-50 dark:text-gray-400 dark:bg-gray-800">
+                                    class="text-xs font-semibold tracking-wide text-left text-white-500 uppercase border-b dark:border-orange-400 bg-orange-400 dark:text-black-400 dark:bg-white-800">
                                     <th class="px-4 py-3">Product</th>
                                     <th class="px-4 py-3">Price</th>
                                     <th class="px-4 py-3">Category</th>
                                     <th class="px-4 py-3">Action</th>
                                 </tr>
                             </thead>
-                            <tbody class="bg-white divide-y dark:divide-gray-700 dark:bg-gray-800">
+                            <tbody class="bg-white divide-y dark:divide-white-400 dark:bg-white-800">
                                 @foreach ($products as $product)
                                     <tr
-                                        class="bg-gray-50 dark:bg-gray-800 hover:bg-gray-100 dark:hover:bg-purple-800 text-gray-700 dark:text-gray-400">
+                                        class="bg-white-50 dark:bg-white-800 hover:bg-gray-100 dark:hover:bg-orange-400 text-gray-700 dark:text-black-400">
                                         <td class="px-4 py-3">
                                             <div class="flex items-center text-sm">
                                                 <div>

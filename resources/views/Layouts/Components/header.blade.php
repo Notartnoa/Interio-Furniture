@@ -1,5 +1,5 @@
 <div
-class="fixed w-full flex items-center justify-between h-14 dark:text-white text-black z-10  dark:bg-gray-900 bg-white">
+class="fixed w-full flex items-center justify-between h-14 dark:text-white text-black z-10  dark:bg-orange-400 bg-white">
 <a href="/" class="flex p-5">
     <span class="self-center text-xl font-bold whitespace-nowrap dark:text-white">Interio.</span>
 </a>
