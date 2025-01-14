@@ -3,6 +3,7 @@
 use App\Http\Controllers\CartController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\OrderController;
+use App\Http\Controllers\PaymentController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\UserController;
 use App\Models\Category;
@@ -27,6 +28,10 @@ Route::get(
     '/products',
     [ProductController::class, 'index']
 );
+
+Route::get('/payment', [PaymentController::class, 'showPaymentPage'])->name('payment.page');
+Route::post('/payment/upload', [PaymentController::class, 'uploadProof'])->name('payment.upload');
+
 
 Route::get('/login', function () {
     return view('Auth.login');
