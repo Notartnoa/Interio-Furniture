@@ -1,0 +1,10 @@
+pipeline {
+    agent any
+    stages {
+        stage('Hello Jenkins World!') {
+            steps {
+                echo 'Tulong Ndan, Mumet Saya😪😪'
+            }
+        }
+    }
+}
